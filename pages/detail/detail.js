@@ -73,12 +73,13 @@ Page({
       url: requestUrl,
       success: (result) => {
         if (result.data.status == 1) {
-          let detail = app.towxml.toJson('## 一。首先学会打坐', 'markdown', app);
-          detail.theme = 'dark';
+          console.log(result);
+          let detail = app.towxml.toJson(result.data.data.content, 'markdown', app);
+          detail.theme = 'light';
           console.log(detail);
           self.setData({
-            'article': detail
-            // 'article':result.data.data,
+            'article': detail,
+            'detail':result.data.data,
           });
         }
       },  
