@@ -1,0 +1,20 @@
+<!-- tradeList是要循环的数组，内部的属性通过item.xxx的方式调用 -->
+ <block wx:for='{{tradeList}}'>
+   <!-- data-*属性在触发事件时获取  -->
+   <view class='singleTrade' hover-class='item-press' catchtap='detail' data-id='{{item.id}}'>
+     <image src='{{item.img}}' class='img' />
+     <view class='detail'>
+        <view class='a'>
+          <view class='name'>{{item.title}}</view>
+        </view>
+        <view class='b'>
+          <view class='price'>{{item.desc}}</view>
+        </view>
+        <block wx:for='{{item.tag}}'>
+        <view class='b'>
+          <text>{{item}}</text>
+          </view>
+        </block>
+     </view>
+   </view>
+ </block>
