@@ -10,11 +10,13 @@
         <view class='b'>
           <view class='price'>{{item.desc}}</view>
         </view>
-        <block wx:for='{{item.tag}}'>
-        <view class='b'>
-          <text>{{item}}</text>
-          </view>
-        </block>
+        <view class='tag'>
+          <block wx:for='{{item.tag}}'>
+          <view class='item'>
+            <text>{{item}}</text>
+            </view>
+          </block>
+        </view>
      </view>
    </view>
  </block>
